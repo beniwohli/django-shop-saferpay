@@ -20,6 +20,7 @@ setup(
     install_requires=[
         'Django>=1.2',
         'django-shop',
+        'requests',
     ],
     classifiers = [
         "Development Status :: 3 - Alpha",
