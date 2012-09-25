@@ -104,7 +104,7 @@ class SaferPayBackend(object):
 
     def get_urls(self):
         return patterns('',
-            url(r'^$', self.pay, name='saferpay-pay'),
+            url(r'^$', self.pay, name='saferpay'),
             url(r'^v/$', self.verify, name='saferpay-verify'),
             url(r'^c/$', self.cancel, name='saferpay-cancel'),
             url(r'^f/$', self.failure, name='saferpay-failure'),
