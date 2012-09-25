@@ -7,7 +7,7 @@ NOTIFY_ADDRESS = getattr(settings, 'SAFERPAY_NOTIFY_ADDRESS', None)
 ALLOW_COLLECT = getattr(settings, 'SAFERPAY_ALLOW_COLLECT', False)
 DELIVERY = getattr(settings, 'SAFERPAY_DELIVERY', False)
 
-SUCCESS_URL_NAME = getattr(settings, 'SAFERPAY_SUCCESS_REDIRECT_URL', None)
+SUCCESS_URL_NAME = getattr(settings, 'SAFERPAY_SUCCESS_REDIRECT_URL', 'thank_you_for_your_order')
 CANCEL_URL_NAME = getattr(settings, 'SAFERPAY_CANCEL_URL_NAME', 'saferpay-cancel')
 FAILURE_URL_NAME = getattr(settings, 'SAFERPAY_FAILURE_URL_NAME', 'saferpay-failure')
 
@@ -27,6 +27,6 @@ FONT = getattr(settings, 'SAFERPAY_FONT_FACE', None)
 PROCESS_URL = getattr(settings, 'SAFERPAY_PROCESS_URL', 'https://www.saferpay.com/hosting/CreatePayInit.asp')
 VERIFY_URL = getattr(settings, 'SAFERPAY_VERIFY_URL', 'https://www.saferpay.com/hosting/VerifyPayConfirm.asp')
 PAYMENT_COMPLETE_URL = getattr(settings, 'SAFERPAY_PAYMENT_COMPLETE_URL', 'https://www.saferpay.com/hosting/PayComplete.asp')
-USE_PAYMENT_COMPLETE_URL = False
+USE_PAYMENT_COMPLETE_URL = getattr(settings, 'SAFERPAY_USE_PAYMENT_COMPLETE_URL', False)
 
 USE_CELERY = getattr(settings, 'SAFERPAY_USE_CELERY', False)
