@@ -7,7 +7,7 @@ NOTIFY_ADDRESS = getattr(settings, 'SAFERPAY_NOTIFY_ADDRESS', None)
 ALLOW_COLLECT = getattr(settings, 'SAFERPAY_ALLOW_COLLECT', False)
 DELIVERY = getattr(settings, 'SAFERPAY_DELIVERY', False)
 
-SUCCESS_URL_NAME = getattr(settings, 'SAFERPAY_SUCCESS_REDIRECT_URL', None)
+SUCCESS_URL_NAME = getattr(settings, 'SAFERPAY_SUCCESS_REDIRECT_URL', 'thank_you_for_your_order')
 CANCEL_URL_NAME = getattr(settings, 'SAFERPAY_CANCEL_URL_NAME', 'saferpay-cancel')
 FAILURE_URL_NAME = getattr(settings, 'SAFERPAY_FAILURE_URL_NAME', 'saferpay-failure')
 
