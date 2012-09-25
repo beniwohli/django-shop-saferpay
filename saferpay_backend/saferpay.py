@@ -81,7 +81,7 @@ class SaferPayBackend(object):
                 except Exception:
                     pass # this is already logged in payment_complete
             order.save()  # force order.modified to be bumped (we rely on this in the "thank you" view)
-            return HttpResponseRedirect(reverse(settings.SUCCESS_URL_NAME))
+            return self.success()
         return self.failure(request)
 
     def cancel(self, request):
@@ -101,6 +101,9 @@ class SaferPayBackend(object):
              'order': order,
              'order_name': self.shop.get_order_short_name(order)
         }, context_instance=RequestContext(request))
+
+    def success(self):
+        return HttpResponseRedirect(self.shop.get_finished_url())
 
     def get_urls(self):
         return patterns('',
