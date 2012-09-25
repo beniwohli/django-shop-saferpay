@@ -12,7 +12,9 @@ if settings.USE_CELERY:
     from celery import task as celery_task
 
 
-def payment_complete(url=settings.PAYMENT_COMPLETE_URL, params={}, order_id=None):
+def payment_complete(url=settings.PAYMENT_COMPLETE_URL, params=None, order_id=None):
+    if params is None:
+        params = {}
     if settings.USE_PAYMENT_COMPLETE_URL:
         try:
             response = requests.get(url, timeout=10, params=params)
